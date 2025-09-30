@@ -26,10 +26,10 @@
 
  
 
-    <div>
-        <div class="hero_area">
+    <div class="{{ request()->is('/') ? '' : 'sub_page' }}">
+        <div class="hero_area ">
             <div class="bg-box">
-                <img src="{{ asset('/images/hero-bg.jpg') }}" alt="">
+               <img src="{{ asset('images/hero-bg.jpg') }}" alt="">
             </div>
             <!-- header section strats -->
             <header class="header_section">
@@ -78,7 +78,13 @@
                 </div>
             </header>
             <!-- end header section -->
-   @include('home.slider')
+
+ 
+
+            @if (request()->is('/'))
+            @include('home.slider')
+            @endif
+
         </div>
     </div>
     
