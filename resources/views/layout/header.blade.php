@@ -40,7 +40,7 @@
             <header class="header_section">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg custom_nav-container">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{ route('home.index') }}">
                             <span>
                                 webprog.io
                             </span>
@@ -54,14 +54,14 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">صفحه اصلی</a>
+                                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ route('home.index') }}">صفحه اصلی</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="menu.html">منو</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">درباره ما</a>
+                                <li class="nav-item  {{ request()->is('about') ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ route('about.index') }}">درباره ما</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">تماس باما</a>
