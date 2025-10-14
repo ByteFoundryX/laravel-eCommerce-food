@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,3 +28,6 @@ Route::group(['prefix' => 'contact-us'] , function(){
     Route::post('/' , [ContactUsController::class , 'store'])->name('contact.store');
 
 });
+
+
+Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('product.show');
